@@ -17,8 +17,14 @@ namespace SubwayForms.Forms
         Hashtable hashtable = new Hashtable();
         Common cmm = new Common();
         Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
-        Panel pnl1,pnl2;
-
+        Panel pnl1,pnl2;        //pnl1 = 전체 패널 , pnl2 = 폼나오는패널
+        MenuForm mf;
+        BreadForm bf;
+        ToppingForm tf;
+        VegeForm vf;
+        CheezeForm cf;
+        SourceForm sf;
+        SideForm smf;//사이드메뉴폼
         public MdiForm()
         {
             InitializeComponent();
@@ -57,7 +63,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn2");
             hashtable.Add("text", "빵");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_Bread);
             btn2 = cmm.getButton(hashtable, this);
             btn2.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
 
@@ -68,7 +74,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn3");
             hashtable.Add("text", "토핑");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_Topping);
             btn3 = cmm.getButton(hashtable, this);
             btn3.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
 
@@ -79,7 +85,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn4");
             hashtable.Add("text", "야채");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_Vegetable);
             btn4 = cmm.getButton(hashtable, this);
             btn4.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
 
@@ -90,7 +96,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn5");
             hashtable.Add("text", "치즈");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_Cheeze);
             btn5 = cmm.getButton(hashtable, this);
             btn5.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
 
@@ -101,7 +107,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn6");
             hashtable.Add("text", "소스");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_Source);
             btn6 = cmm.getButton(hashtable, this);
             btn6.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
 
@@ -112,7 +118,7 @@ namespace SubwayForms.Forms
             hashtable.Add("color", Color.White);
             hashtable.Add("name", "btn7");
             hashtable.Add("text", "사이드  메뉴");
-            //hashtable.Add("click", (EventHandler)btn_);
+            hashtable.Add("click", (EventHandler)btn_SideForm);
             btn7 = cmm.getButton(hashtable, this);
             btn7.Font = new Font("맑은 고딕", 20, FontStyle.Regular);
         }
@@ -133,12 +139,79 @@ namespace SubwayForms.Forms
             hashtable.Add("name", "pnl2");
             pnl2 = cmm.getPanel(hashtable, pnl1);
         }
-
-        private void btn_Menu(object o, EventArgs e)
+        
+        private void btn_Menu(object o, EventArgs e)  //메뉴카테로그 이벤트
         {
-            //MenuForm
+            mf = new MenuForm();
 
-
+            mf.WindowState = FormWindowState.Maximized;
+            mf.FormBorderStyle = FormBorderStyle.None;
+            mf.MdiParent = this;
+            pnl2.Controls.Add(mf);
+            mf.Show();
         }
+
+        private void btn_Bread(object o, EventArgs e) //빵카테로그 이벤트
+        {
+            bf = new BreadForm();
+
+            bf.WindowState = FormWindowState.Maximized;
+            bf.FormBorderStyle = FormBorderStyle.None;
+            bf.MdiParent = this;
+            pnl2.Controls.Add(bf);
+            bf.Show();
+        }
+
+        private void btn_Topping(object o, EventArgs e) //토핑카테로그 이벤트
+        {
+            tf = new ToppingForm();
+            tf.WindowState = FormWindowState.Maximized;
+            tf.FormBorderStyle = FormBorderStyle.None;
+            tf.MdiParent = this;
+            pnl2.Controls.Add(tf);
+            tf.Show();
+        }
+
+        private void btn_Vegetable(object o, EventArgs e) //토핑카테로그 이벤트
+        {
+            vf = new VegeForm();
+            vf.WindowState = FormWindowState.Maximized;
+            vf.FormBorderStyle = FormBorderStyle.None;
+            vf.MdiParent = this;
+            pnl2.Controls.Add(vf);
+            vf.Show();
+        }
+
+        private void btn_Cheeze(object o, EventArgs e) //토핑카테로그 이벤트
+        {
+            cf = new CheezeForm();
+            cf.WindowState = FormWindowState.Maximized;
+            cf.FormBorderStyle = FormBorderStyle.None;
+            cf.MdiParent = this;
+            pnl2.Controls.Add(cf);
+            cf.Show();
+        }
+
+        private void btn_Source(object o, EventArgs e) //토핑카테로그 이벤트
+        {
+            sf = new SourceForm();
+            sf.WindowState = FormWindowState.Maximized;
+            sf.FormBorderStyle = FormBorderStyle.None;
+            sf.MdiParent = this;
+            pnl2.Controls.Add(sf);
+            sf.Show();
+        }
+
+        private void btn_SideForm(object o, EventArgs e) //토핑카테로그 이벤트
+        {
+            smf = new SideForm();
+            smf.WindowState = FormWindowState.Maximized;
+            smf.FormBorderStyle = FormBorderStyle.None;
+            smf.MdiParent = this;
+            pnl2.Controls.Add(smf);
+            smf.Show();
+        }
+
+
     }
 }

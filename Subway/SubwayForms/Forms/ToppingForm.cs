@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace SubwayForms.Forms
 {
-    public partial class MenuForm : Form
+    public partial class ToppingForm : Form
     {
-        public MenuForm()
+        public ToppingForm()
         {
             InitializeComponent();
-            Load += MenuForm_Load;
-            this.BackColor = Color.Red;
+            Load += ToppingForm_Load;
+            this.BackColor = Color.Yellow;
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
+        private void ToppingForm_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }
